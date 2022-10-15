@@ -1,0 +1,33 @@
+<div class="container">
+    <form #RegisterForm="ngForm" (ngSubmit)="AddCustomer()">
+        <div class="mb-3 row">
+            <label for="inputName" class="col-xs-4 col-form-label">Name</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" [(ngModel)]="Customer.cutomerName" name="cutomerName" id="inputName"
+                    placeholder="Name">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputName" class="col-xs-4 col-form-label">Phone</label>
+            <div class="col-xs-8">
+                <input type="text" class="form-control" [(ngModel)]="Customer.phoneNumber" name="cutomerName" id="inputName"
+                    placeholder="Phone">
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <div class="offset-sm-4 col-sm-8">
+                <button type="submit" class="btn btn-primary">Action</button>
+            </div>
+        </div>
+    </form>
+    <!-- <div class="btn-group" dropdown>
+        <a id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle" aria-controls="dropdown-basic">
+            التخصصات<span style="color: orange;font-weight: 700;">{{Model.UserName}}</span>
+        </a>
+        <ul  id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+            <li *ngFor="let category of allCategory" role="menuitem" > <a  (click)="getcategory(category.category_Id)" class="dropdown-item " >
+                    <i  class="fa fa-user-o"></i>{{category.category_Name}}</a></li>
+        </ul>
+    </div> -->
+
+</div>

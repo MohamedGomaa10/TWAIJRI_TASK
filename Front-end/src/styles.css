@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@import"~bootstrap/dist/css/bootstrap.min.css";
+@import"~font-awesome/css/font-awesome.min.css";
+@import"~alertifyjs/build/css/alertify.rtl.min.css";
+@import "~datatables.net-dt/css/jquery.dataTables.css";
+@import"~alertifyjs/build/css/themes/bootstrap.rtl.min.css";
+@import "~ngx-toastr/toastr.css";
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,28 @@
+#collapsibleNavId{
+    justify-content: space-around;
+    }
+.navbar-nav{
+    font-size: xx-large;
+}
+.navbar-brand{
+    font-size: xx-large;
+    padding-right: 20px;
+    color: antiquewhite;
+    font-family: math;
+}
+.btn-outline-success{
+    width: 275px;
+    margin-right: 5px;
+    color: #dbe7e1 !important;
+    border-color: #ce3959;
+    font-weight: bold;
+}
+.btn-outline-success:hover{
+    background-color: #ce3959;
+}
+
+.dropdown-toggle{
+    color: antiquewhite;
+    font-size: xx-large;
+    font-family: sans-serif;
+}
