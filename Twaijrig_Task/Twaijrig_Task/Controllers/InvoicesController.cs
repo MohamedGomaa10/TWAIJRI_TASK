@@ -31,17 +31,27 @@ namespace Twaijrig_Task.Controllers
         {
             return await _context.Invoices.Include(c => c.Customer).Include(c=>c.Customer.User).ToListAsync();
         }
-        // GET: api/GetInvoicesPaid
-        [HttpGet("GetInvoicesPaid")]
-        public async Task<ActionResult<IEnumerable<Invoice>>> GetInvoicesPaid()
+
+
+        //// GET: api/GetInvoicesPaid
+        //[HttpGet("GetInvoicesPaid")]
+        //public async Task<ActionResult<IEnumerable<Invoice>>> GetInvoicesPaid()
+        //{
+        //    return await _context.Invoices.Include(c => c.Customer).Where(c => c.State == State.Pay).ToListAsync();
+        //}
+        //// GET: api/GetInvoicesUnPaid
+        //[HttpGet("GetInvoicesUnPaid")]
+        //public async Task<ActionResult<IEnumerable<Invoice>>> GetInvoicesUnPaid()
+        //{
+        //    return await _context.Invoices.Include(c => c.Customer).Where(c => c.State == State.NotPay).ToListAsync();
+        //}
+
+
+        // GET: api/GetInvoicesPaid/state
+        [HttpGet("GetInvoicesState/{state}")]
+        public async Task<ActionResult<IEnumerable<Invoice>>> GetInvoicesState(State state)
         {
-            return await _context.Invoices.Include(c=>c.Customer).Where(c=>c.State==State.Pay).ToListAsync();
-        }
-        // GET: api/GetInvoicesUnPaid
-        [HttpGet("GetInvoicesUnPaid")]
-        public async Task<ActionResult<IEnumerable<Invoice>>> GetInvoicesUnPaid()
-        {
-            return await _context.Invoices.Include(c => c.Customer).Where(c => c.State == State.NotPay).ToListAsync();
+            return await _context.Invoices.Include(c => c.Customer).Where(c => c.State == state).ToListAsync();
         }
 
         // GET: api/GetInvoiceById/5
