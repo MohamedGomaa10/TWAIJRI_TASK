@@ -16,7 +16,7 @@ import { ModalInvoiceComponent } from '../modal-invoice/modal-invoice.component'
 export class InvoiceComponent implements OnInit {
   Invoices:any;
   dataSource!:MatTableDataSource<any>;
-  columndefs : any[] = ['value', 'invoiceDate', 'state', 'cutomer', 'actions'];
+  columndefs : any[] = ['invoiceId','value', 'invoiceDate', 'state', 'cutomer', 'actions'];
   constructor(@Inject(MAT_DIALOG_DATA) public ivoiceData: any, public dialog: MatDialog,private http:HttpClient , private alerty:AlertifyService,private router:Router ,private route:ActivatedRoute, private _services:InvoiceService) { }
 
   ngOnInit(): void {
@@ -28,6 +28,33 @@ export class InvoiceComponent implements OnInit {
       next: (invoice) => {
         this.Invoices = invoice
         this.dataSource = new MatTableDataSource(invoice);
+      }
+    })
+  }
+
+  // GetInvoicesPaid() {
+  //   this._services.getInvoicesPaid().subscribe({
+  //     next: (invoicePaid) => {
+  //       this.Invoices = invoicePaid
+  //       this.dataSource = new MatTableDataSource(invoicePaid);
+  //     }
+  //   })
+  // }
+
+  // getInvoicesUnPaid() {
+  //   this._services.getInvoicesUnPaid().subscribe({
+  //     next: (invoicePaid) => {
+  //       this.Invoices = invoicePaid
+  //       this.dataSource = new MatTableDataSource(invoicePaid);
+  //     }
+  //   })
+  // }
+  
+  GetInvoicesState(id:number) {
+    this._services.getInvoicesState(id).subscribe({
+      next: (invoicePaid) => {
+        this.Invoices = invoicePaid
+        this.dataSource = new MatTableDataSource(invoicePaid);
       }
     })
   }

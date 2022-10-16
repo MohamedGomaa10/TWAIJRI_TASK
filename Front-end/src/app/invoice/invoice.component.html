@@ -1,46 +1,4 @@
-<!-- <table class="table align-middle mb-0 bg-white">
-    <thead class="bg-light">
-      <tr>
-        <th>Name</th>
-        <th>Invoice Date</th>
-        <th>Status</th>
-        <th>Value</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of Invoices">
-        <td>
-          <div class="d-flex align-items-center">
-            <img
-                src="https://mdbootstrap.com/img/new/avatars/8.jpg"
-                alt=""
-                style="width: 45px; height: 45px"
-                class="rounded-circle"
-                />
-            <div class="ms-3">
-              <p class="fw-bold mb-1">{{item.customer.cutomerName}}</p>
-              <p class="text-muted mb-0">{{item.customer.user.email}}</p>
-            </div>
-          </div>
-        </td>
-        <td>
-          <p class="fw-normal mb-1">{{item.invoiceDate}}</p>
-        </td>
-        <td>
-          <span>{{item.state==1?"paid":"unPaid"}}</span>
-        </td>
-        <td>{{item.value}}</td>
-        <td>
-          <button type="button" class="btn btn-link btn-sm btn-rounded">
-            Edit
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table> -->
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -86,7 +44,17 @@ $(document).ready(function(){
 			<div class="table-title">
 				<div class="row">
 					<div class="col-sm-6">
-						<h2>Manage <b>Invoices</b></h2>
+						<div class="row">
+							<div (click)="GetAllInvoices()" class="col-sm-6" style="cursor: pointer;">
+								<h2>Manage <b>Invoices</b></h2>	
+							</div>			
+							<div class="col-sm-3">
+								<button (click)="GetInvoicesState(1)" class="btn btn-info">InvoicesPaid</button>
+							</div>	
+							<div class="col-sm-3">
+								<button (click)="GetInvoicesState(0)" class="btn btn-warning">InvoicesUnPaid</button>
+							</div>	
+						</div>			
 					</div>
 					<div class="col-sm-6">
 						<a (click)="openDialog()" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i>
@@ -95,6 +63,10 @@ $(document).ready(function(){
 				</div>
 			</div>
 			<table mat-table [dataSource]="dataSource" class="table table-striped table-hover " >
+				<ng-container matColumnDef="invoiceId">
+					<th mat-header-cell *matHeaderCellDef>InvoiceId </th>
+					<td mat-cell *matCellDef="let element"> {{element.invoiceId}} </td>
+				  </ng-container>
 				<ng-container matColumnDef="value">
 					<th mat-header-cell *matHeaderCellDef>Value </th>
 					<td mat-cell *matCellDef="let element"> {{element.value}} </td>

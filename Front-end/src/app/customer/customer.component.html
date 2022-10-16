@@ -82,6 +82,10 @@ $(document).ready(function(){
 					<th mat-header-cell *matHeaderCellDef>phoneNumber </th>
 					<td mat-cell *matCellDef="let element"> {{element.phoneNumber}} </td>
 				  </ng-container>
+				  <ng-container matColumnDef="invoicesNumber">
+					<th mat-header-cell *matHeaderCellDef>InvoicesNumber </th>
+					<td mat-cell *matCellDef="let element"> {{element.invoices.length}} </td>
+				  </ng-container>
 				  <ng-container matColumnDef="actions">
 					<th mat-header-cell *matHeaderCellDef></th>
 					<td  mat-cell *matCellDef="let row">                       

@@ -17,7 +17,7 @@ import { MatTableDataSource } from '@angular/material/table';
 export class CustomerComponent implements OnInit {
   Customers:any;
   dataSource!:MatTableDataSource<any>;
-  columndefs : any[] = ['customerName', 'phoneNumber', 'actions'];  
+  columndefs : any[] = ['customerName', 'phoneNumber','invoicesNumber', 'actions'];  
   constructor(public dialog: MatDialog,private http:HttpClient , private alerty:AlertifyService,private router:Router ,private route:ActivatedRoute, private _services:CustomerService) { }
 
  
