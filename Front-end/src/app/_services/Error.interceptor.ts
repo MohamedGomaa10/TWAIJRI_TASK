@@ -21,7 +21,7 @@ export class ErrorInterseptor implements HttpInterceptor{
         .pipe(
             catchError((error:HttpErrorResponse)=>{
                 const errorMessage =this.setError(error);
-                this.alertri.showError(errorMessage,"");
+                this.alertri.showError(errorMessage,"You must be Login");
                 return throwError(()=>{errorMessage});
             })
         );

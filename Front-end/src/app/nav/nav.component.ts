@@ -9,6 +9,7 @@ import { AuthService } from '../_services/auth.service';
 })
 export class NavComponent implements OnInit {
 Model:any={};
+Token:any = localStorage.getItem('token');
   constructor(private authservice:AuthService,private alerty:AlertifyService) { }
 
   ngOnInit(): void {
@@ -20,14 +21,10 @@ Model:any={};
       }
       )
   }
-
   LoggedIn(){
-    const Token = localStorage.getItem('token');
-    return !!Token;
+    return !!this.Token;
   }
-
-  newtoken:any = localStorage.getItem('token');
-
+ 
   LoggedOut(){
     localStorage.removeItem('token'); 
     console.log('تم الخروج');

@@ -1,10 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import {AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertifyService } from '../_services/alertify.services';
 import { CustomerService } from '../_services/customerService/customer.service';
-import { Customer } from '../_services/models/Customer.model';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 import { MatTableDataSource } from '@angular/material/table';
@@ -29,9 +27,12 @@ export class CustomerComponent implements OnInit {
   getCustomers() {
     this._services.getCategories().subscribe({
       next: (customer) => {
+        if(this.token==null){
+          this.alerty.showError("Error","Error")
+        }
         this.Customers = customer
         this.dataSource = new MatTableDataSource(customer);
-        console.log(customer);
+        console.log(this.token);
         
       }
     })

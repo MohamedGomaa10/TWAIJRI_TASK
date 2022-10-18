@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #70193B;">
+<!-- <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #70193B;">
     <a class="navbar-brand" >Twaiji</a>
  
     <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
@@ -27,4 +27,37 @@
             </ul>
           </div>
     </div>
-</nav>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-survival101">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="https://lh3.googleusercontent.com/-ZAS0BBE8Sm0/WaFOdATxW9I/AAAAAAAAAf4/8FfuKoWw6n0cvynAv7Fv2sdYESliQEm4wCL0BGAYYCw/h18/2017-08-26.png" alt="L A N T E R N">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link"  [routerLink]="['/Customers/GetCustomers']">Customers</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" [routerLink]="['/Invoices/GetInvoices']">Ivnoices <span class="visually-hidden">(current)</span></a>
+            </li>
+        </ul>
+        <form class="form-inline">
+          <div class="input-group search-box">
+            <input type="text" class="form-control" placeholder="What are you looking for?" aria-label="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-secondary" type="button"><i class="ion-search"></i></button>
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>
+      
+  </nav>
+  
+
