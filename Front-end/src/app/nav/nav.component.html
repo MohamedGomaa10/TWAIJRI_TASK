@@ -55,6 +55,21 @@
             </span>
           </div>
         </form>
+
+        
+        <div class="btn-group" dropdown>
+            <a id="button-basic" dropdownToggle type="button" class="btn dropdown-toggle"
+                    aria-controls="dropdown-basic">
+                    Hello<span style="color: orange;font-weight: 700;">{{Model.UserName}}</span>
+        </a>
+            <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                role="menu" aria-labelledby="button-basic">
+              
+              <li role="menuitem"> <a class="dropdown-item " href="#" (click)="LoggedOut()">
+                <i class="fa fa-sign-out"></i> {{LoggedIn()?"LogOut":"Log In"}}
+            </a></li>
+            </ul>
+          </div>
       </div>
     </div>
       

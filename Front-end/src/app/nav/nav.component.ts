@@ -13,6 +13,7 @@ Token:any = localStorage.getItem('token');
   constructor(private authservice:AuthService,private alerty:AlertifyService) { }
 
   ngOnInit(): void {
+    this.LoggedIn();
   }
 
   Login(){
